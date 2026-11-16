@@ -121,5 +121,55 @@
         <span>© 2026 DreamRoute. All rights reserved.</span>
     </footer>
 
+<script>
+document.getElementById("trip-form").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const destination = document.getElementById("destination").value;
+    const budget = document.getElementById("budget").value;
+    const days = document.getElementById("days").value;
+
+    const result = document.getElementById("trip-result");
+
+    result.innerHTML = "✨ Creating your dream adventure...";
+
+    try {
+        const response = await fetch("/api/plan", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                destination: destination,
+                budget: budget,
+                days: days
+            })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || "Something went wrong");
+        }
+
+        result.innerHTML = `
+            <h3>✈️ Your DreamRoute Itinerary</h3>
+            <p><strong>Destination:</strong> ${data.destination}</p>
+            <p><strong>Budget:</strong> $${data.budget}</p>
+            <p><strong>Duration:</strong> ${data.days} days</p>
+            <p><strong>Daily Budget:</strong> $${data.daily_budget}</p>
+            <h4>Your Adventure</h4>
+            ${data.itinerary.map(item => `
+                <p><strong>Day ${item.day}:</strong> ${item.activity}</p>
+            `).join("")}
+        `;
+
+    } catch (error) {
+        result.innerHTML = `<p>${error.message}</p>`;
+    }
+});
+</script>
+</body>
+
 </body>
 </html>
