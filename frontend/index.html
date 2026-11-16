@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamRoute | Discover Your Next Adventure</title>
+    <meta name="description" content="Discover extraordinary destinations and create your dream travel itinerary with DreamRoute.">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">✦ DreamRoute</a>
+
+        <nav>
+            <a href="#destinations">Destinations</a>
+            <a href="#experiences">Experiences</a>
+            <a href="#planner">Trip Planner</a>
+        </nav>
+
+        <a href="#planner" class="nav-button">Plan Your Trip ↗</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow">✦ YOUR JOURNEY STARTS HERE</span>
+
+                <h1>
+                    Don't just travel.<br>
+                    <span>Find your somewhere.</span>
+                </h1>
+
+                <p>
+                    Extraordinary places. Unforgettable moments.
+                    Your next adventure is closer than you think.
+                </p>
+
+                <a href="#planner" class="primary-button">
+                    Discover Your Journey →
+                </a>
+
+                <div class="hero-stats">
+                    <div>
+                        <strong>120+</strong>
+                        <span>Destinations</span>
+                    </div>
+                    <div>
+                        <strong>50K+</strong>
+                        <span>Happy explorers</span>
+                    </div>
+                    <div>
+                        <strong>4.9/5</strong>
+                        <span>Traveler rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-caption">
+                    <span>✦ DESTINATION OF THE WEEK</span>
+                    <h3>Discover the extraordinary</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="destinations" class="destinations">
+            <span class="eyebrow">EXPLORE THE WORLD</span>
+            <h2>Places that stay with you.</h2>
+            <p>Find inspiration for your next unforgettable escape.</p>
+
+            <div class="destination-grid">
+                <article class="destination-card">
+                    <div class="destination-photo bali"></div>
+                    <h3>Bali, Indonesia</h3>
+                    <p>Tropical paradise · Beaches</p>
+                </article>
+
+                <article class="destination-card">
+                    <div class="destination-photo swiss"></div>
+                    <h3>Swiss Alps</h3>
+                    <p>Mountain escapes · Adventure</p>
+                </article>
+
+                <article class="destination-card">
+                    <div class="destination-photo japan"></div>
+                    <h3>Kyoto, Japan</h3>
+                    <p>Culture · Timeless beauty</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="planner" class="planner">
+            <span class="eyebrow">✦ YOUR ADVENTURE, YOUR WAY</span>
+            <h2>Where will your dreams take you?</h2>
+            <p>Let's start planning something extraordinary.</p>
+
+            <form id="trip-form">
+                <input type="text" id="destination"
+                    placeholder="Where do you want to go?" required>
+
+                <input type="number" id="budget"
+                    placeholder="Your budget (USD)" min="1" required>
+
+                <input type="number" id="days"
+                    placeholder="Number of days" min="1" max="30" required>
+
+                <button type="submit">Create My Adventure ↗</button>
+            </form>
+
+            <div id="trip-result"></div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#" class="logo">✦ DreamRoute</a>
+        <p>Made for dreamers. Built for explorers.</p>
+        <span>© 2026 DreamRoute. All rights reserved.</span>
+    </footer>
+
+</body>
+</html>
